@@ -1,4 +1,4 @@
-const {Schema, model, ObjectId} = require('mongoose')
+const {Schema, model, Types: {ObjectId}} = require('mongoose')
 
 const User = new Schema({
     email: {type: String, required: true, unique: true},
@@ -9,4 +9,4 @@ const User = new Schema({
     files: [{type: ObjectId, ref: 'File'}]
 })
 
-module.export = model('User', User)
+module.exports = model('User', User)
