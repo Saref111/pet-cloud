@@ -1,0 +1,22 @@
+.form {
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 540px;
+    margin: 0 auto;
+    margin-top: 25vh;
+    padding: 20px;
+
+    &__legend {
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 33px;
+        margin-bottom: 15px;
+    }
+
+    &__button {
+        display: block;
+        margin: 0 auto;
+    }
+}

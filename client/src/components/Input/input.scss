@@ -1,1 +1,37 @@
-.input {}
+.input {
+    display: flex;
+    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 15px;
+
+    &__label {
+        position: absolute;
+        top: 6px;
+        left: 15px;
+        transition: 400ms ease-in-out;
+        transition-property: left, top, transform;
+    }
+
+    &__field {
+        padding: 10px 15px;
+        display: block;
+        width: 100%;
+
+        &::placeholder {
+            color: transparent;
+        }
+
+        &:focus,
+        &:not(:placeholder-shown) {
+            &+label {
+                transform: scale(0.7);
+                transform-origin: 0 0;
+                top: -17px;
+                left: 2px;
+            }
+        }
+    }
+
+
+}

@@ -10,10 +10,10 @@ function Header() {
             <nav className="header__nav">
                 <ul className="header__nav-list">
                     <li className="header__item">
-                        <button className="header__link">Log in</button>
+                        <a href="/" className="header__link">Log in</a>
                     </li>
                     <li className="header__item">
-                        <button className="header__link">Sign Up</button>
+                        <a href="/registration" className="header__link">Sign Up</a>
                     </li>
                 </ul>
             </nav>

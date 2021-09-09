@@ -26,6 +26,10 @@
         display: flex;
     }
 
+    &__item {
+        margin-right: 10px;
+    }
+
 
     &__link {
         border: none;
@@ -45,6 +49,7 @@
         &__link {
             font-size: 20px;
         }
+
         &__item {
             margin-right: 25px;
         }
