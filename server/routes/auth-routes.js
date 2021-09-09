@@ -33,7 +33,7 @@ router.post('/registration',
             const user = new User({email, password: hashPassword})
             await user.save()
 
-            return res.json({message: 'User was created'})
+            return res.status(200).json({message: 'User was created'})
         } catch (e) {
             console.error(e);
             res.status(500).send({message: 'Server error'})

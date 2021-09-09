@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { registration } from '../../utils/user';
 import Input from '../Input/Input';
 import './registration.scss'
 
@@ -9,6 +10,12 @@ function Registration() {
 
     const onSubmit = (e) => {
         e.preventDefault()
+
+        if (password !== confirmPassword) {
+            return alert('Passwords should be equal')
+        }
+
+        registration(email, password)
     }
 
     return (<form className="form" action="" method="post" onSubmit={onSubmit}>
