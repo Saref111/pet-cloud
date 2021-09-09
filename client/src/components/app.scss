@@ -1,20 +1,4 @@
-@mixin hover-active($hover, $active) {
-
-    &:hover,
-    &:focus {
-        background-color: $hover;
-    }
-
-    &:active {
-        background-color: $active;
-    }
-}
-
-@mixin transition($property: all, $duration: 500ms, $tf: ease-in-out) {
-    transition-property: $property;
-    transition-duration: $duration;
-    transition-timing-function: $tf;
-}
+@import '../utils/vars.scss';
 
 *,
 *::before,
@@ -41,15 +25,16 @@ body {
     min-width: 320px;
     margin: 0;
     padding: 0;
-    font-family: "Montserrat", "Arial", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 28px;
     font-weight: 400;
-    color: #333333;
+    color: $fontColor;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     position: relative;
+    background-color: $bgColor;
 }
 
 .no-scroll {
