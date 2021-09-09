@@ -1,6 +1,7 @@
 import React from "react";
 import './header.scss'
 import Logo from '../../assets/img/logo.svg'
+import { NavLink } from "react-router-dom";
 function Header() {
     return (<header className="header">
         <div className="header__wrapper">
@@ -10,10 +11,10 @@ function Header() {
             <nav className="header__nav">
                 <ul className="header__nav-list">
                     <li className="header__item">
-                        <a href="/" className="header__link">Log in</a>
+                        <NavLink to="/" className="header__link">Log in</NavLink>
                     </li>
                     <li className="header__item">
-                        <a href="/registration" className="header__link">Sign Up</a>
+                        <NavLink to="/registration" className="header__link">Sign Up</NavLink>
                     </li>
                 </ul>
             </nav>
