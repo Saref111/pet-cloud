@@ -7,7 +7,11 @@ function Registration() {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
 
-    return (<form className="form" action="" method="post">
+    const onSubmit = (e) => {
+        e.preventDefault()
+    }
+
+    return (<form className="form" action="" method="post" onSubmit={onSubmit}>
         <legend className="form__legend">Registration</legend>
         <Input value={email} onChange={setEmail} label={'Email'} type={'email'} />
         <Input value={password} onChange={setPassword} label={'Password'} type={'password'} />
