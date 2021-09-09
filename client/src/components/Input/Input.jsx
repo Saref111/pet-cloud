@@ -4,11 +4,13 @@ function Input(props) {
     const ID = Math.random()
     const {
         type = 'text',
-        label = ''
+        label = '',
+        value = '',
+        onChange = () => { }
     } = props
 
     return (<div className="input">
-        <input className="input__field" type={type} placeholder={label} id={ID} />
+        <input value={value} onChange={(e) => onChange(e.target.value)} className="input__field" type={type} placeholder={label} id={ID} />
         <label htmlFor={ID} className="input__label">{label}</label>
     </div>);
 }

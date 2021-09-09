@@ -11,7 +11,7 @@ function Header() {
             <nav className="header__nav">
                 <ul className="header__nav-list">
                     <li className="header__item">
-                        <NavLink to="/" className="header__link">Log in</NavLink>
+                        <NavLink to="/login" className="header__link">Log in</NavLink>
                     </li>
                     <li className="header__item">
                         <NavLink to="/registration" className="header__link">Sign Up</NavLink>
