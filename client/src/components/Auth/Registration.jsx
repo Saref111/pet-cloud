@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { registration } from '../../utils/user';
 import Input from '../Input/Input';
-import './registration.scss'
+import './form.scss'
 
 function Registration() {
     const [email, setEmail] = useState('')

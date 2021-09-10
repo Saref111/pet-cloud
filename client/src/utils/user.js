@@ -11,3 +11,15 @@ export const registration = async (email, password) => {
     }
 
 }
+
+
+export const login = async (email, password) => {
+    try {
+        
+        const resp = await axios.post(CONSTANTS.BASE_URL + '/api/auth/login', {email, password})
+        console.log(resp);
+    } catch (e) {
+        console.error(e.response.data.message);
+    }
+
+}
