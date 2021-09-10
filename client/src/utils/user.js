@@ -1,7 +1,7 @@
 import axios from 'axios'
 import CONSTANTS from './constants'
 
-export const registration = async (email, password, errorHandler) => {
+export const registration = async (email, password) => {
     try {
         
         const resp = await axios.post(CONSTANTS.BASE_URL + '/api/auth/registration', {email, password})
