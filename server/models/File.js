@@ -3,10 +3,12 @@ const {Schema, model, Types: {ObjectId}} = require('mongoose')
 const File = new Schema({
     name: {type: String, required: true, unique: true},
     type: {type: String, required: true},
-    size: {type: Number, required: true},
-    user_id: {type: ObjectId, ref: 'User', required: true},
-    parent_id: {type: ObjectId, ref: 'File', required: true},
-    access_link: {type: String, required: true, unique: true},
+    accessLink: {type: String},
+    size: {type: Number, default: 0},
+    path: {type: String, default: ''},
+    user: {type: ObjectId, ref: 'User'},
+    parent: {type: ObjectId, ref: 'File'},
+    children: [{type: ObjectId, ref: 'File'}],
 })
 
-module.export = model('File', File)
+module.exports = model('File', File)

@@ -6,6 +6,8 @@ const jwt = require('jsonwebtoken')
 const config = require('config')
 const SECRET_KEY = config.get('secretKey')
 const authMiddleware = require('../middleware/auth.middleware')
+const FileService = require('../services/fileService')
+const File = require('../models/File')
 
 const router = new Router()
 
@@ -25,7 +27,6 @@ router.post('/registration',
             const {email, password} = req.body
 
             const candidate = await User.findOne({email})
-
             if (candidate) {
                 return res.status(400).json({message: `User ${email} already exists`})
             }
@@ -33,6 +34,9 @@ router.post('/registration',
             const hashPassword = await bcrypt.hash(password, 8)
             const user = new User({email, password: hashPassword})
             await user.save()
+
+            const file = new File({user: user.id, name: ''}) 
+            await FileService.createDir(file)
 
             return res.status(200).json({message: 'User was created'})
         } catch (e) {
