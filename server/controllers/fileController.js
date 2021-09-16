@@ -6,8 +6,7 @@ const FileService = require("../services/fileService");
 class FileController {
     async createDir(req, res) {
         try {
-            const {name, type, parent = req.user.id} = req.body
-
+            const {name, type, parent} = req.body
             const file = new File({name, type, parent, user: req.user.id})
             const parentFile = await File.findOne({_id: parent})
             
