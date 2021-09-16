@@ -1,5 +1,5 @@
 function File() {
-    return (  );
+    return (<article></article>);
 }
 
 export default File;

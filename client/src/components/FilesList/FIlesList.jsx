@@ -1,5 +1,5 @@
 function FilesList() {
-    return (  );
+    return (<ul></ul>);
 }
 
 export default FilesList;

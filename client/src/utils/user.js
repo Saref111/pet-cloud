@@ -18,9 +18,9 @@ export const login = (email, password) => {
     return async (dispatch) => {
         try {
             const resp = await axios.post(CONSTANTS.BASE_URL + '/api/auth/login', {email, password})
+            localStorage.setItem('token', resp.data.token)
             
             dispatch(setUser(resp.data.user))
-            localStorage.setItem('token', resp.data.token)
         } catch (e) {
             console.error(e.response.data.message);
         }
