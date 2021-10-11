@@ -20,7 +20,7 @@ function auth(req, res, next) {
         const decodedToken = jwt.verify(token, SECRET_KEY)
         req.user = decodedToken
         
-        next()
+        return next()
     } catch (e) {
         return res.status(401).json({message: 'Auth error'})
     }

@@ -32,7 +32,7 @@ class FileController {
     async fetchFiles(req, res) {
         try {
             const files = await File.find({user: req.user.id, parent: req.query.parent})
-            return res.status(200).json({files})
+            return res.status(200).json(files)
         } catch (error) {
             console.error(error);
             return res.code(400).json({message: `Can't get files`})
